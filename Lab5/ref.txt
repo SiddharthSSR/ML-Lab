@@ -1,0 +1,6 @@
+# For future reference
+for i in df.columns:
+    if df[i].dtype == 'O':
+        class_mapping = {label: idx for idx, label in
+                        enumerate(np.unique(df[i]))}
+        df[i] = df[i].map(class_mapping)
